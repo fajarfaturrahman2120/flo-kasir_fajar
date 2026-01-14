@@ -8,6 +8,7 @@ use App\Http\Controllers\KasController;
 use App\Http\Controllers\KasbonController;
 use App\Http\Controllers\Kasbon_detailController;
 use App\Http\Controllers\KasirController;
+use App\Http\Controllers\Kas_keluar_masukController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -68,4 +69,13 @@ Route::get('/kasir/{id}/edit', [KasirController::class, 'edit'])->name('kasir.ed
 Route::put('/kasir/{id}', [KasirController::class, 'update'])->name('kasir.update');
 Route::get('/kasir/{id}', [KasirController::class, 'show'])->name('kasir.show');
 Route::delete('/kasir/{id}', [KasirController::class, 'destroy'])->name('kasir.destroy');
+//kas keluar masuk
+Route::get('/kas_keluar_masuk', [Kas_keluar_masukController::class, 'index'])->name('kas_keluar_masuk.index');
+Route::get('/kas_keluar_masuk/create', [Kas_keluar_masukController::class, 'create'])->name('kas_keluar_masuk.create');
+Route::post('/kas_keluar_masuk', [Kas_keluar_masukController::class, 'store'])->name('kas_keluar_masuk.store');
+Route::get('/kas_keluar_masuk/{id}/edit', [Kas_keluar_masukController::class, 'edit'])->name('kas_keluar_masuk.edit');
+Route::put('/kas_keluar_masuk/{id}', [Kas_keluar_masukController::class, 'update'])->name('kas_keluar_masuk.update');
+Route::get('/kas_keluar_masuk/{id}', [Kas_keluar_masukController::class, 'show'])->name('kas_keluar_masuk.show');
+Route::delete('/kas_keluar_masuk/{id}', [Kas_keluar_masukController::class, 'destroy'])->name('kas_keluar_masuk.destroy');
+
 
