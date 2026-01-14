@@ -7,6 +7,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\KasController;
 use App\Http\Controllers\KasbonController;
 use App\Http\Controllers\Kasbon_detailController;
+use App\Http\Controllers\KasirController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -59,4 +60,12 @@ Route::get('/kasbon_detail/{id}/edit', [Kasbon_detailController::class, 'edit'])
 Route::put('/kasbon_detail/{id}', [Kasbon_detailController::class, 'update'])->name('kasbon_detail.update');
 Route::get('/kasbon_detail/{id}', [Kasbon_detailController::class, 'show'])->name('kasbon_detail.show');
 Route::delete('/kasbon_detail/{id}', [Kasbon_detailController::class, 'destroy'])->name('kasbon_detail.destroy');
+//kasir
+Route::get('/kasir', [KasirController::class, 'index'])->name('kasir.index');
+Route::get('/kasir/create', [KasirController::class, 'create'])->name('kasir.create');
+Route::post('/kasir', [KasirController::class, 'store'])->name('kasir.store');
+Route::get('/kasir/{id}/edit', [KasirController::class, 'edit'])->name('kasir.edit');
+Route::put('/kasir/{id}', [KasirController::class, 'update'])->name('kasir.update');
+Route::get('/kasir/{id}', [KasirController::class, 'show'])->name('kasir.show');
+Route::delete('/kasir/{id}', [KasirController::class, 'destroy'])->name('kasir.destroy');
 
