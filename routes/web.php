@@ -6,6 +6,7 @@ use App\Http\Controllers\BopController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\KasController;
 use App\Http\Controllers\KasbonController;
+use App\Http\Controllers\Kasbon_detailController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -50,4 +51,12 @@ Route::get('/kasbon/{id}/edit', [KasbonController::class, 'edit'])->name('kasbon
 Route::put('/kasbon/{id}', [KasbonController::class, 'update'])->name('kasbon.update');
 Route::get('/kasbon/{id}', [KasbonController::class, 'show'])->name('kasbon.show');
 Route::delete('/kasbon/{id}', [KasbonController::class, 'destroy'])->name('kasbon.destroy');
+//kasbon detail
+Route::get('/kasbon_detail', [Kasbon_detailController::class, 'index'])->name('kasbon_detail.index');
+Route::get('/kasbon_detail/create', [Kasbon_detailController::class, 'create'])->name('kasbon_detail.create');
+Route::post('/kasbon_detail', [Kasbon_detailController::class, 'store'])->name('kasbon_detail.store');
+Route::get('/kasbon_detail/{id}/edit', [Kasbon_detailController::class, 'edit'])->name('kasbon_detail.edit');
+Route::put('/kasbon_detail/{id}', [Kasbon_detailController::class, 'update'])->name('kasbon_detail.update');
+Route::get('/kasbon_detail/{id}', [Kasbon_detailController::class, 'show'])->name('kasbon_detail.show');
+Route::delete('/kasbon_detail/{id}', [Kasbon_detailController::class, 'destroy'])->name('kasbon_detail.destroy');
 

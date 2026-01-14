@@ -37,12 +37,12 @@
             <tr class="text-center">
                  <td>{{ $item->id_kasbon }}</td>
                  <td>{{ $item->id_toko }}</td>
-                 <td>{{ $item->jumlah_kasbon }}</td>
+                 <td>Rp {{ number_format($item->jumlah_kasbon, 0, ',', '.') }}</td>
                  <td>{{ $item->nama_pengkasbon }}</td>
                  <td>{{ $item->jenis_kasbon }}</td>
                  <td>{{ $item->pembayaran_kasbon }}</td>
                  <td>{{ $item->keterangan_kasbon }}</td>
-                 <td>{{ $item->cicilan }}</td>
+              <td>Rp {{ number_format($item->cicilan, 0, ',', '.') }}</td>
                  <td>{{ $item->tanggal_kasbon }}</td>
                  <td>{{ $item->bulan_kasbon }}</td>
                  <td>{{ $item->tahun_kasbon }}</td>
