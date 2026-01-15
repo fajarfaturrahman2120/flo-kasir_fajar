@@ -11,7 +11,7 @@
 <div class="container mt-4">
     <form action="{{route('kas_keluar_masuk.store')}}" method="post">
     @csrf
-        <h1 class="text-center"></h1>
+        <h1 class="text-center">Form Tambah</h1>
              <div class="mb-3">
                 <label class="form-label">Id Toko</label>
                 <select name="id_toko" class="form-control" required>

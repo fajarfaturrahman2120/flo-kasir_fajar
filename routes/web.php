@@ -9,6 +9,7 @@ use App\Http\Controllers\KasbonController;
 use App\Http\Controllers\Kasbon_detailController;
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\Kas_keluar_masukController;
+use App\Http\Controllers\KategoriController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -77,5 +78,12 @@ Route::get('/kas_keluar_masuk/{id}/edit', [Kas_keluar_masukController::class, 'e
 Route::put('/kas_keluar_masuk/{id}', [Kas_keluar_masukController::class, 'update'])->name('kas_keluar_masuk.update');
 Route::get('/kas_keluar_masuk/{id}', [Kas_keluar_masukController::class, 'show'])->name('kas_keluar_masuk.show');
 Route::delete('/kas_keluar_masuk/{id}', [Kas_keluar_masukController::class, 'destroy'])->name('kas_keluar_masuk.destroy');
-
+//kategori
+Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
+Route::get('/kategori/create', [KategoriController::class, 'create'])->name('kategori.create');
+Route::post('/kategori', [KategoriController::class, 'store'])->name('kategori.store');
+Route::get('/kategori/{id}/edit', [KategoriController::class, 'edit'])->name('kategori.edit');
+Route::put('/kategori/{id}', [KategoriController::class, 'update'])->name('kategori.update');
+Route::get('/kategori/{id}', [KategoriController::class, 'show'])->name('kategori.show');
+Route::delete('/kategori/{id}', [KategoriController::class, 'destroy'])->name('kategori.destroy');
 

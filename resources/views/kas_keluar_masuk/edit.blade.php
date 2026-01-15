@@ -11,6 +11,7 @@
 <div class="container mt-4">
     <form action="{{route('kas_keluar_masuk.update', $kas_keluar_masuk->id_kas_keluar_masuk)}}" method="post">
     @csrf
+    @method('PUT')
         <h1 class="text-center">Form Edit</h1>
                  <div class="mb-3">
                     <label class="form-label">Nama Toko</label>

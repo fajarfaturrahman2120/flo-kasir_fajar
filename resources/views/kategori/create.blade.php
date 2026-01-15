@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Tambah Data</title>
+<link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <form action="{{route('kategori.store')}}" method="post">
+         @csrf
+            <div class="mb-3">
+                <label class="form-label">Id Toko</label>
+                <select name="id_toko" class="form-control" required>
+                    <option value="">-- Pilih Toko --</option>
+                    @foreach ($asettoko as $item)
+                        <option value="{{ $item->id_toko }}">
+                            {{  $item->id_toko }}--{{$item->nama_aset_toko }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="form-label">Nama Kategori</label>
+                <select name="nama_kategori" class="form-control" id="">
+                    <option value="">-- Pilih Kategori Anda --</option>
+                    <option value="Makanan">Makanan</option>
+                    <option value="Minuman">Minuman</option>
+                    <option value="Snack">Snack</option>
+                    <option value="Beras">Beras</option>
+                    <option value="sayur">sayur</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="form-label">Jenis Transaksi</label>
+                <select name="jenis_transaksi" class="form-control" id="" required>
+                    <option value="">-- Pilih Jeis Transaksi Anda --</option>
+                    <option value="Qris">Qris</option>
+                    <option value="Dana">Dana</option>
+                    <option value="Atm BRI">Atm BRI</option>
+                    <option value="Gopay">Gopay</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success w-100"> Kirim</button>
+        </form>
+    </div>
+<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
