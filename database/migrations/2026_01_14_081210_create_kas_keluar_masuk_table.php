@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('kas_keluar_masuk', function (Blueprint $table) {
             $table->id('id_kas_keluar_masuk');
             $table->integer('id_toko');
-            $table->integer('nama_kas_keluar_masuk');
+            $table->string('nama_kas_keluar_masuk');
             $table->integer('id_user');
             $table->string('pembayaran_kas_keluar_masuk');
-            $table->date('tanggal_kas_keluar_masuk');
+            $table->date('tanggal_bayar_kas_keluar_masuk');
             $table->integer('jumlah_kas_keluar_masuk');
             $table->string('tipe_kas_keluar_masuk');
             $table->integer('bulan_kas_keluar_masuk');

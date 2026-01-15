@@ -39,19 +39,19 @@
                  <td>{{ $item->nama_kas_keluar_masuk }}</td>
                  <td>{{ $item->id_user }}</td>
                  <td>{{ $item->pembayaran_kas_keluar_masuk}}</td>
-                 <td>{{ $item->Tanggal_kas_keluar_masuk }}</td>
-                 <td>{{ $item->jumlah_kas_keluar_masuk }}</td>
+                 <td>{{ $item->tanggal_bayar_kas_keluar_masuk }}</td>
+                 <td>Rp {{ number_format($item->jumlah_kas_keluar_masuk, 0, ',', '.') }}</td>
                  <td>{{ $item->tipe_kas_keluar_masuk }}</td>
                  <td>{{ $item->bulan_kas_keluar_masuk }}</td>
                  <td>{{ $item->tahun_kas_keluar_masuk }}</td>
 
                  <td>
-                        <a href="{{ route('kasbon.edit', $item->id_kasbon) }}"
+                        <a href="{{ route('kas_keluar_masuk.edit', $item->id_kas_keluar_masuk) }}"
                             class="btn btn-warning btn-sm">
                             Edit
                         </a>
 
-                        <form action="{{ route('kasbon.destroy', $item->id_kasbon) }}"
+                        <form action="{{ route('kas_keluar_masuk.destroy', $item->id_kas_keluar_masuk) }}"
                               method="POST"
                               class="d-inline">
                             @csrf
