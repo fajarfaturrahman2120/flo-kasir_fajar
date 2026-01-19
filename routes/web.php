@@ -10,6 +10,10 @@ use App\Http\Controllers\Kasbon_detailController;
 use App\Http\Controllers\KasirController;
 use App\Http\Controllers\Kas_keluar_masukController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\Kategori_bopController;
+use App\Http\Controllers\Kategori_pendapatanController;
+use App\Http\Controllers\Kategori_pengeluaranController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -86,4 +90,27 @@ Route::get('/kategori/{id}/edit', [KategoriController::class, 'edit'])->name('ka
 Route::put('/kategori/{id}', [KategoriController::class, 'update'])->name('kategori.update');
 Route::get('/kategori/{id}', [KategoriController::class, 'show'])->name('kategori.show');
 Route::delete('/kategori/{id}', [KategoriController::class, 'destroy'])->name('kategori.destroy');
-
+//kategoti_bop
+Route::get('/kategori_bop', [Kategori_bopController::class, 'index'])->name('kategori_bop.index');
+Route::get('/kategori_bop/create', [Kategori_bopController::class, 'create'])->name('kategori_bop.create');
+Route::post('/kategori_bop', [Kategori_bopController::class, 'store'])->name('kategori_bop.store');
+Route::get('/kategori_bop/{id}/edit', [Kategori_bopController::class, 'edit'])->name('kategori_bop.edit');
+Route::put('/kategori_bop/{id}', [Kategori_bopController::class, 'update'])->name('kategori_bop.update');
+Route::get('/kategori_bop/{id}', [Kategori_bopController::class, 'show'])->name('kategori_bop.show');
+Route::delete('/kategori_bop/{id}', [Kategori_bopController::class, 'destroy'])->name('kategori_bop.destroy');
+//kategori Pendapatan
+Route::get('/kategori_pendapatan', [Kategori_pendapatanController::class, 'index'])->name('kategori_pendapatan.index');
+Route::get('/kategori_pendapatan/create', [Kategori_pendapatanController::class, 'create'])->name('kategori_pendapatan.create');
+Route::post('/kategori_pendapatan', [Kategori_pendapatanController::class, 'store'])->name('kategori_pendapatan.store');
+Route::get('/kategori_pendapatan/{id}/edit', [Kategori_pendapatanController::class, 'edit'])->name('kategori_pendapatan.edit');
+Route::put('/kategori_pendapatan/{id}', [Kategori_pendapatanController::class, 'update'])->name('kategori_pendapatan.update');
+Route::get('/kategori_pendapatan/{id}', [Kategori_pendapatanController::class, 'show'])->name('kategori_pendapatan.show');
+Route::delete('/kategori_pendapatan/{id}', [Kategori_pendapatanController::class, 'destroy'])->name('kategori_pendapatan.destroy');
+//kategori Pengeluaran
+Route::get('/kategori_pengeluaran', [Kategori_pengeluaranController::class, 'index'])->name('kategori_pengeluaran.index');
+Route::get('/kategori_pengeluaran/create', [Kategori_pengeluaranController::class, 'create'])->name('kategori_pengeluaran.create');
+Route::post('/kategori_pengeluaran', [Kategori_pengeluaranController::class, 'store'])->name('kategori_pengeluaran.store');
+Route::get('/kategori_pengeluaran/{id}/edit', [Kategori_pengeluaranController::class, 'edit'])->name('kategori_pengeluaran.edit');
+Route::put('/kategori_pengeluaran/{id}', [Kategori_pengeluaranController::class, 'update'])->name('kategori_pengeluaran.update');
+Route::get('/kategori_pengeluaran/{id}', [Kategori_pengeluaranController::class, 'show'])->name('kategori_pengeluaran.show');
+Route::delete('/kategori_pengeluaran/{id}', [Kategori_pengeluaranController::class, 'destroy'])->name('kategori_pengeluaran.destroy');

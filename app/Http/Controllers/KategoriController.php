@@ -37,17 +37,28 @@ class KategoriController extends Controller
 
         return view('kategori.edit', compact('kategori', 'asettoko'));
     }
-    public function update(Request $request ,$id)
+   public function update(Request $request, $id)
     {
         $request->validate([
-            'id_toko'   => 'required|exists:aset_toko,id_toko',
-            'nama_kategori'   => 'required|string',
-            'jenis_transaksi'   => 'required|string',
+            'id_toko' => 'required|exists:aset_toko,id_toko',
+            'nama_kategori' => 'required|string',
+            'jenis_transaksi' => 'required|string',
         ]);
 
         $kategori = Kategori::findOrFail($id);
         $kategori->update($request->all());
-        return redirect()->route('kategori.index')  ->with('success', 'Data berhasil diubah');;
 
+        return redirect()->route('kategori.index')
+            ->with('success', 'Data berhasil diubah');
+    }
+
+    public function destroy($id)
+    {
+        $kategori = Kategori::findOrFail($id);
+        $kategori->delete();
+
+        return redirect()
+            ->route('kategori.index')
+            ->with('success', 'Data kas berhasil dihapus');
     }
 }

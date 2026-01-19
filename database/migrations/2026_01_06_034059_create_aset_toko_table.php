@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id('id_aset_toko');
             $table->integer('id_toko');
             $table->string('nama_aset_toko');
-            $table->integer('harga_perolehan');
-            $table->integer('harga_sekarang');
+            $table->decimal('harga_perolehan');
+            $table->decimal('harga_sekarang');
             $table->text('keterangan_aset_toko');
             $table->integer('bulan_aset_toko');
             $table->integer('tahun_aset_toko');
