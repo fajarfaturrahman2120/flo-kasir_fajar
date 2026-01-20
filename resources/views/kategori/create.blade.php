@@ -24,14 +24,7 @@
             </div>
             <div class="mb-3">
                 <label for="form-label">Nama Kategori</label>
-                <select name="nama_kategori" class="form-control" id="">
-                    <option value="">-- Pilih Kategori Anda --</option>
-                    <option value="Makanan">Makanan</option>
-                    <option value="Minuman">Minuman</option>
-                    <option value="Snack">Snack</option>
-                    <option value="Beras">Beras</option>
-                    <option value="sayur">sayur</option>
-                </select>
+                <input type="text" class="form-control" name="nama_kategori"  required>
             </div>
             <div class="mb-3">
                 <label for="form-label">Jenis Transaksi</label>

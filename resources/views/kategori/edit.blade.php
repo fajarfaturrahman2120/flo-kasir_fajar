@@ -29,14 +29,7 @@
 
             <div class="mb-3">
                 <label for="form-label">Nama Kategori</label>
-                <select name="nama_kategori" class="form-control" id="">
-                    <option value="">-- Pilih Kategori Anda --</option>
-                    <option value="Makanan" {{ $kategori->nama_kategori == 'Makanan' ? 'selected' : '' }}>Makanan</option>
-                    <option value="Minuman" {{ $kategori->nama_kategori == 'Minuman' ? 'selected' : '' }}>Minuman</option>
-                    <option value="Snack"  {{ $kategori->nama_kategori == 'Snack' ? 'selected' : '' }}>Snack</option>
-                    <option value="Beras" {{ $kategori->nama_kategori == 'Beras' ? 'selected' : '' }}>Beras</option>
-                    <option value="sayur" {{ $kategori->nama_kategori == 'Sayur' ? 'selected' : '' }}>sayur</option>
-                </select>
+                <input type="text" class="form-control" name="nama_kategori" value{{$kategori->nama_kategori}} required>
             </div>
             <div class="mb-3">
                 <label for="form-label">Jenis Transaksi</label>
