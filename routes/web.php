@@ -13,7 +13,8 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\Kategori_bopController;
 use App\Http\Controllers\Kategori_pendapatanController;
 use App\Http\Controllers\Kategori_pengeluaranController;
-
+use App\Http\Controllers\KeranjangController;
+use App\Models\Keranjang;
 
 Route::get('/', function () {
     return view('welcome');
@@ -114,3 +115,12 @@ Route::get('/kategori_pengeluaran/{id}/edit', [Kategori_pengeluaranController::c
 Route::put('/kategori_pengeluaran/{id}', [Kategori_pengeluaranController::class, 'update'])->name('kategori_pengeluaran.update');
 Route::get('/kategori_pengeluaran/{id}', [Kategori_pengeluaranController::class, 'show'])->name('kategori_pengeluaran.show');
 Route::delete('/kategori_pengeluaran/{id}', [Kategori_pengeluaranController::class, 'destroy'])->name('kategori_pengeluaran.destroy');
+//keranjang
+Route::get('/keranjang', [KeranjangController::class, 'index'])->name('keranjang.index');
+Route::get('/keranjang/create', [KeranjangController::class, 'create'])->name('keranjang.create');
+Route::post('/keranjang', [KeranjangController::class, 'store'])->name('keranjang.store');
+Route::get('/keranjang/{id}/edit', [KeranjangController::class, 'edit'])->name('keranjang.edit');
+Route::put('/keranjang/{id}', [KeranjangController::class, 'update'])->name('keranjang.update');
+Route::get('/keranjang/{id}', [KeranjangController::class, 'show'])->name('keranjang.show');
+Route::delete('/keranjang/{id}', [KeranjangController::class, 'destroy'])->name('keranjang.destroy');
+
