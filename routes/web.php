@@ -14,7 +14,7 @@ use App\Http\Controllers\Kategori_bopController;
 use App\Http\Controllers\Kategori_pendapatanController;
 use App\Http\Controllers\Kategori_pengeluaranController;
 use App\Http\Controllers\KeranjangController;
-use App\Models\Keranjang;
+
 
 Route::get('/', function () {
     return view('welcome');
