@@ -33,17 +33,17 @@
 
             <div class=" mb-3">
                 <label>ID Kasir</label>
-                <input type="text" name="id_kasir" class="form-control" required>
+                <input type="number" name="id_kasir" class="form-control" required>
             </div>
 
             <div class=" mb-3">
                 <label>ID Transaksi</label>
-                <input type="text" name="id_transaksi" class="form-control" required>
+                <input type="number" name="id_transaksi" class="form-control" required>
             </div>
 
             <div class=" mb-3">
                 <label>ID Produk</label>
-                <input type="text" name="id_produk" class="form-control" required>
+                <input type="number" name="id_produk" class="form-control" required>
             </div>
 
             <div class=" mb-3">

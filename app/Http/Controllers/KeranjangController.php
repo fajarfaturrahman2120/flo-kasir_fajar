@@ -33,6 +33,7 @@ class KeranjangController extends Controller
             'id_produk' => 'required',
             'qty_keranjang' => 'required|numeric',
             'total_beli' => 'required|numeric',
+            'harga_terpilih '=>'required|numeric',
         ]);
 
         Keranjang::create($request->all());
