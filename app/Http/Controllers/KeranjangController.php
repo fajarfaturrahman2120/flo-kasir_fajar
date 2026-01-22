@@ -34,6 +34,7 @@ class KeranjangController extends Controller
             'qty_keranjang' => 'required|numeric',
             'total_beli' => 'required|numeric',
             'harga_terpilih '=>'required|numeric',
+            'pengaturan_stok '=>'required|astring',
         ]);
 
         Keranjang::create($request->all());
