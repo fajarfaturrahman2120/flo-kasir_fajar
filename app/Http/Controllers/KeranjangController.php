@@ -38,22 +38,20 @@ class KeranjangController extends Controller
         ]);
 
         Keranjang::create($request->all());
-
-        return redirect()->route('keranjang.index')
-                         ->with('success', 'Data keranjang berhasil ditambahkan');
+        return redirect()->route('keranjang.index')->with('success', 'Data keranjang berhasil ditambahkan');
     }
 
     // SHOW (detail satu data)
     public function show($id)
     {
-        $item = Keranjang::findOrFail($id);
+        $keranjang = Keranjang::findOrFail($id);
         return view('keranjang.show', compact('item'));
     }
 
     // EDIT (tampilkan form edit)
     public function edit($id)
     {
-        $item = Keranjang::findOrFail($id);
+        $keranjang = Keranjang::findOrFail($id);
         $asettoko = AsetToko::all();
 
         return view('keranjang.edit', compact('item', 'toko'));
@@ -63,7 +61,7 @@ class KeranjangController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-              'id_toko'   => 'required|exists:aset_toko,id_toko',
+            'id_toko'   => 'required|exists:aset_toko,id_toko',
             'id_kasir' => 'required',
             'id_transaksi' => 'required',
             'id_produk' => 'required',
