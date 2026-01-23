@@ -41,8 +41,8 @@
                 <th>Harga Diskon</th>
                 <th>Status Beli</th>
                 <th>Diskon</th>
-                <th>Pengaturan Stok</th>
                 <th>Harga Diskon</th>
+                <th>Pengaturan Stok</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -66,8 +66,8 @@
                     <td>{{ $item->harga_diskon }}</td>
                     <td>{{ $item->status_beli }}</td>
                     <td>{{ $item->is_diskon }}</td>
-                    <td>{{ $item->pengaturan_diskon }}</td>
                     <td>{{ $item->cek_harga_diskon }}</td>
+                    <td>{{ $item->pengaturan_diskon }}</td>
 
                     <td>
                         <a href="{{ route('keranjang.edit', $item->id_keranjang) }}"
