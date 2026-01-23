@@ -71,8 +71,8 @@ class KeranjangController extends Controller
             'total_beli' => 'required|numeric',
         ]);
 
-        $item = Keranjang::findOrFail($id);
-        $item->update($request->all());
+        $keranjang = Keranjang::findOrFail($id);
+        $keranjang->update($request->all());
 
         return redirect()->route('keranjang.index')
                          ->with('success', 'Data keranjang berhasil diupdate');

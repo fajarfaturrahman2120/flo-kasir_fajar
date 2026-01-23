@@ -83,7 +83,7 @@
 
             <div class=" mb-3">
                 <label>Harga Terpilih</label>
-                <input type="number" name="harga_tepilih" class="form-control">
+                <input type="number" name="harga_terpilih" class="form-control">
             </div>
 
             <div class=" mb-3">
