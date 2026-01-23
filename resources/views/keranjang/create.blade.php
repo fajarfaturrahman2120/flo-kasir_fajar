@@ -94,8 +94,8 @@
             <div class=" mb-3">
                 <label>Status Beli</label>
                 <select name="status_beli" class="form-control">
-                    <option value="0">Pending</option>
-                    <option value="1">Selesai</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Selesai">Selesai</option>
                 </select>
             </div>
 
