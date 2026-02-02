@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\AuthController;
+
 use App\Http\Controllers\AsetTokoController;
 use App\Http\Controllers\BopController;
 use App\Http\Controllers\CustomerController;
@@ -21,26 +20,7 @@ use App\Http\Controllers\KeranjangController;
 Route::get('/', function () {
     return view('welcome');
 });
-//login
-Route::get('/auth', function () {
-    return redirect('/login');
-});
 
-
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'Proseslogin'])->name('login.proses');
-
-Route::get('/register', [AuthController::class, 'shoeRegister'])->name('register');
-Route::post('/register', [AuthController::class, 'register'])->name('register.proses');
-
-Route::get('/dashboard', [AuthController::class, 'dashboard'])
-    ->middleware('auth')
-    ->name('dashboard');
-
-Route::post('/logout', function () {
-    Auth::logout();
-    return redirect('/login');
-})->name('logout');
 // Asettoko
 Route::get('/aset_toko', [AsetTokoController::class, 'index'])->name('aset_toko.index');
 Route::get('/aset_toko/create', [AsetTokoController::class, 'create'])->name('aset_toko.create');
